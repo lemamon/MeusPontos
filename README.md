@@ -1,6 +1,6 @@
 # Meus Pontos
 
-Aqui constam os diagramas de um aplicativo (Mobile/Web) para perda de peso com base de controle de pontos.
+Aqui constam os diagramas UML de um aplicativo (Mobile/Web) para perda de peso com base de controle de pontos.
 
 ##Diagramas
 
