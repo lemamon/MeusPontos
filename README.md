@@ -6,6 +6,7 @@ Aqui constam os diagramas UML de um aplicativo (Mobile/Web) para perda de peso c
 
 <ol>
    <li>Diagrama de Caso de Uso</li>
+   <li>Diagrama de Classes</li>
    <li>Diagrama de Atividades
        <ol>
        	   <li>DA001 - Cadastrar Medidas</li>
