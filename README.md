@@ -16,4 +16,11 @@ Aqui constam os diagramas UML de um aplicativo (Mobile/Web) para perda de peso c
        	   <li>DA006 - Alterar Limite</li>
        </ol>
    </li>
+   <li>Diagrama de Sequencia
+       <ol>
+       	   <li>DS001 - Cadastrar Medidas</li>
+       	   <li>DS003 - Acompanhar Consumo</li>
+       	   <li>DS006 - Alterar Limite</li>
+       </ol>
+   </li>
 </ol>
