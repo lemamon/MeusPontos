@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>+Meus Pontos - Login</title>
+        <title>+Meus Pontos - Cadastro</title>
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,12 +28,18 @@
     <body>
         <div class="container-fluid">
             <br>
-            <div class="text-center bg-warning col-sm-6 col-md-offset-3">
+            <div class="text-center bg-info col-sm-6 col-md-offset-3">
                 <br>
                 <img src="images\logo.png" alt="..." class="img-circle">
                 <h1>+Meus Pontos</h1>
-                <p>Emagrecendo com Saúde</p>
+                <h3>Cadastro</h3>
                 <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="exampleInputName2" class="col-sm-2 control-label col-md-offset-2">Nome</label>
+                        <div class="col-sm-4">
+                            <input type="text" required class="form-control" id="exampleInputName2" placeholder="Ned Stark">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 control-label col-md-offset-2">Email</label>
                         <div class="col-sm-4">
@@ -47,21 +53,35 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-4 col-sm-4">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Lembrar-me
-                                </label>
-                            </div>
+                        <label for="exampleInputName2" class="col-sm-2 control-label col-md-offset-2">Sexo</label>
+                        <div class="col-sm-4">
+                            <label class="radio-inline">
+                                <input type="radio" checked name="inlineRadioOptions" id="inlineRadio1" value="option1">Masculino
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Feminino
+                            </label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-4 col-sm-4">
-                            <button type="submit" class="btn btn-default">Entrar</button>
+                        <label for="exampleInputName2" class="col-sm-2 control-label col-md-offset-2">Peso</label>
+                        <div class="col-sm-2">
+                            <input type="text" required class="form-control" id="exampleInputName2" placeholder="70">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName2" class="col-sm-2 control-label col-md-offset-2">Altura</label>
+                        <div class="col-sm-2">
+                            <input type="text" required class="form-control" id="exampleInputName2" placeholder="1,55">
                         </div>
                     </div>
                     <br>
-                    <p class="text-info">Não possui cadastro? <a href="cadastro.html"><em>Cadastre-se aqui!</em></a></p>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-4">
+                            <button type="submit" class="btn btn-default">Cadastrar</button>
+                        </div>
+                    </div>
+                    <br>
                 </form>
             </div>
         </div>
