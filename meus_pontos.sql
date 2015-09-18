@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS `MeusPontos`.`Alimento` (
   CONSTRAINT `fk_Alimento_Usuario1`
     FOREIGN KEY (`Usuario_US_email`)
     REFERENCES `MeusPontos`.`Usuario` (`US_email`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `MeusPontos`.`Consumo` (
@@ -42,13 +42,13 @@ CREATE TABLE IF NOT EXISTS `MeusPontos`.`Consumo` (
   CONSTRAINT `fk_Usuario_has_Alimento_Usuario1`
     FOREIGN KEY (`Usuario_US_email`)
     REFERENCES `MeusPontos`.`Usuario` (`US_email`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_Usuario_has_Alimento_Alimento1`
     FOREIGN KEY (`Alimento_Alim_nome`)
     REFERENCES `MeusPontos`.`Alimento` (`Alim_nome`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `MeusPontos`.`ControlePeso` (
@@ -60,6 +60,6 @@ CREATE TABLE IF NOT EXISTS `MeusPontos`.`ControlePeso` (
   CONSTRAINT `fk_ControlePeso_Usuario1`
     FOREIGN KEY (`Usuario_US_email`)
     REFERENCES `MeusPontos`.`Usuario` (`US_email`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
