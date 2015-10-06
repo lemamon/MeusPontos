@@ -1,3 +1,19 @@
+<?php
+
+    // Iniciando a sessão
+    session_start();
+
+    // Verificando se o usuário já está logado.
+    if(($_SESSION["nome_logado"] != "") && ($_SESSION["email_logado"] != "")){
+
+        // Se ele já está logado, não vai ser necessário mais fazer login...
+        // Sendo assim, é melhor redirecioná-lo para a tela inicial.
+        header("location: telainicial.php");
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -33,17 +49,17 @@
                 <img src="images\logo.png" alt="..." class="img-circle">
                 <h1>+Meus Pontos</h1>
                 <p>Emagrecendo com Saúde</p>
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" action="logar.php">
                     <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 control-label col-md-offset-2">Email</label>
                         <div class="col-sm-4">
-                            <input type="email" required class="form-control" id="inputEmail3" placeholder="mail@mail.com">
+                            <input type="email" name="email" required class="form-control" id="inputEmail3" placeholder="mail@mail.com">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputPassword3" class="col-sm-2 control-label col-md-offset-2">Senha</label>
                         <div class="col-sm-4">
-                            <input type="password" required class="form-control" id="inputPassword3" placeholder="Password">
+                            <input type="password" name="senha" required class="form-control" id="inputPassword3" placeholder="Password">
                         </div>
                     </div>
                     <div class="form-group">
