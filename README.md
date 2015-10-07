@@ -2,6 +2,9 @@
 
 Aqui constam os diagramas UML do Sistema Web para perda de peso com base de controle de pontos.
 
+##Código fonte
+Foi utilizado PHP, os códigos fontes encontram-se na pasta: meuspontos
+
 ##Diagramas
 
 <ol>
