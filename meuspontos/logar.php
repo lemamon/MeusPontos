@@ -1,6 +1,6 @@
 <?php
-	
-	// Aqui chamamos o arquivo de conexão 
+
+	// Aqui chamamos o arquivo de conexão
     // com o banco de dados
 	include_once("conexao.php");
 
@@ -28,7 +28,7 @@
 	// Aqui estamos contando o número de resultados encontrados.
 	$num_resultados = mysql_num_rows($busca);
 
-	// Aqui estamos colocando os resultados encontrados, 
+	// Aqui estamos colocando os resultados encontrados,
 	// dentro de uma variável (que na verdade é um array)
 	$dados_do_banco = mysql_fetch_array($busca);
 
@@ -36,13 +36,14 @@
 	// Aqui estamos verificando se o número de resultados
 	// encontrados é maior que 0.
 	if($num_resultados > 0){
-		
+
 		//Se for maior que 0, então iniciamos a sessão.
 		session_start();
 
 		// Aqui estamos criando as variáveis de sessão
-		// para armezar os valores e utilizá-los entre as 
+		// para armezar os valores e utilizá-los entre as
 		// páginas.
+		$_SESSION["id_logado"] = $dados_do_banco["us_id"];
 		$_SESSION["nome_logado"] = $dados_do_banco["us_nome"];
 		$_SESSION["email_logado"] = $dados_do_banco["us_email"];
 

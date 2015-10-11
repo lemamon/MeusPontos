@@ -1,0 +1,33 @@
+#data{
+    max-width: 20%;
+}
+
+
+#painelAlimentoQuantidade{
+    margin-top: 20px;
+    display: none;
+}
+
+.pontuacao_alimento{
+    color: #ccc;
+    font-style: italic;
+}
+
+#painelAlimentoSelecionado{
+    display: none;
+    margin-top: 20px;
+}
+
+#painelAlimentoSelecionado table{
+    width: 100%;
+    text-align: center;
+}
+
+#painelAlimentoSelecionado table th,
+#painelAlimentoSelecionado table td{
+    text-align: center;
+}
+
+#alimentos a{
+    text-align: center;
+}

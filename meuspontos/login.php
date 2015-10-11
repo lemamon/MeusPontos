@@ -1,5 +1,4 @@
 <?php
-
     // Iniciando a sessão
     session_start();
 
@@ -10,7 +9,6 @@
         // Sendo assim, é melhor redirecioná-lo para a tela inicial.
         header("location: telainicial.php");
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
