@@ -1,7 +1,10 @@
+i{
+    text-transform: capitalize;
+}
+
 #data{
     max-width: 20%;
 }
-
 
 #painelAlimentoQuantidade{
     margin-top: 20px;
@@ -28,6 +31,24 @@
     text-align: center;
 }
 
+#alimentos{
+    height: 100px !important;
+    overflow-y: scroll;
+
+}
+
 #alimentos a{
     text-align: center;
 }
+
+
+#quantidade{
+    width: 30%;
+
+}
+
+#medida{
+    float:right;
+}
+
+.clear{clear: both;}

@@ -1,6 +1,8 @@
 <?php
     include_once("conexao.php");
     include_once("header.php");
+    $sql = "SELECT * FROM Alimento";
+    $resultado = mysql_query($sql);
 ?>
 
 <link type="text/css" rel="stylesheet" href="css/registrarconsumo.css" charset="utf-8">
@@ -50,43 +52,36 @@
                           <span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="alimentos">
+                          <?php
+                          while($dado = mysql_fetch_array($resultado)) {
+                          ?>
                           <li>
                               <a>
-                                  Action -
-                                  <span class="pontuacao_alimento">50pts</span>
-                                  <input type="hidden" id="id_alimento" value="1">
-                                  <input type="hidden" id="qtde_pontos" value="50">
+                                  <?php echo utf8_encode($dado["alim_descricao"]) ?> -
+                                  <span class="pontuacao_alimento"><?php echo $dado["alim_qtdePontos"] ?>pts</span>
+                                  <input type="hidden" id="id_alimento" value="<?php echo $dado["alim_id"] ?>">
+                                  <input type="hidden" id="qtde_pontos" value="<?php echo $dado["alim_qtdePontos"] ?>">
+                                  <input type="hidden" id="alim_medida" value="<?php echo $dado["alim_medida"] ?>">
                               </a>
                           </li>
-                          <li>
-                              <a>
-                                  Something else here -
-                                  <span class="pontuacao_alimento">90pts</span>
-                                  <input type="hidden" id="id_alimento" value="2">
-                                  <input type="hidden" id="qtde_pontos" value="90">
-                              </a>
-                          </li>
-                          <li>
-                              <a>
-                                  Separated link -
-                                  <span class="pontuacao_alimento">10pts</span>
-                                  <input type="hidden" id="id_alimento" value="3">
-                                  <input type="hidden" id="qtde_pontos" value="10">
-                              </a>
-                          </li>
+                          <?php
+                          } // FIm do FOREACH
+                          ?>
                       </ul>
                   </div>
-
                   <div class="panel panel-default" id="painelAlimentoQuantidade">
                       <div class="panel-heading" id="titulo_painel_quantidade"></div>
                       <div class="panel-body">
-                          <input type="number" class="form-control" id="quantidade" placeholder="Digite a quantidade">
+                          <div class="qtde-wrapper">
+                              <input type="number" class="form-control" id="quantidade" placeholder="Digite a quantidade">
+                              <div class="clear"></div>
+                          </div>
+
                       </div>
                       <div class="panel-footer">
                           <button type="button" class="btn btn-default btn-primary" id="bt_add_alimento_consumido">Adicionar</button>
                       </div>
-                  </div>
-
+                 </div>
                   <div class="panel panel-default" id="painelAlimentoSelecionado">
                       <div class="panel-heading">Lista de Alimentos Inseridos
                           <button type="button" class="btn btn-default" id="bt_limpar_lista">Limpar Lista</button>

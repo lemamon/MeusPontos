@@ -1,0 +1,12 @@
+table{
+    width: 90%;
+    margin: auto;
+}
+table th{
+    text-align: center;
+}
+
+#alterarData{
+    width: 20%;
+    margin-bottom: 30px;
+}

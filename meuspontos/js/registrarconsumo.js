@@ -1,4 +1,5 @@
-$(function(){
+$(document).ready(function(){
+    setTimeout(function() {}, 2000);
 
     var arrAlimentos = new Array();
     var nomeAlimento;
@@ -30,6 +31,8 @@ $(function(){
             var titulo = "Informe a quantidade ingerida de <b>" + nomeAlimento + "</b>";
             $("#titulo_painel_quantidade").html(titulo);
             $("#quantidade").focus();
+            //alert($(this).children("#alim_medida").val());
+            $(".qtde-wrapper div#medida").text($(this).children("#alim_medida").val());
         }
     });
 
@@ -103,25 +106,29 @@ $(function(){
         }else{
             gerarJSON();
             salvarRegistroConsumo();
+            console.log(json);
         }
         return false;
     });
 
     function salvarRegistroConsumo(){
-        $.post('salvar_registros_consumo.php', {jsonData:json}, function(data){
-
-            $("#painel_de_insercao").hide();
-            if(data == parseInt(data, 10)){
-                $("#msg_sucesso_ao_salvar").show();
-            }else{
-                $("#msg_erro_ao_salvar").show();
-                $("#msg_erro_server").text(data);
-            }
-        }, "text");
+        $.post('salvar_registros_consumo.php',
+              {jsonData:json},
+              function(data){
+                  $("#painel_de_insercao").hide();
+                  if(data == parseInt(data, 10)){
+                      $("#msg_sucesso_ao_salvar").show();
+                  }else{
+                      $("#msg_erro_ao_salvar").show();
+                      $("#msg_erro_server").text(data);
+                  }
+              }, "text");
     }
 
     function gerarJSON(){
-        json = "{\"data\": \"" + $("#data").val() + "\", ";
+        var data = formatarData($("#data").val());
+
+        json = "{\"data\": \"" + data + "\", ";
         json += "\"refeicao\": \"" + $(":radio:checked").val() + "\", ";
         json += "\"alimentos\":[";
         for(var i = 0; i < arrAlimentos.length; i+=4){
@@ -136,4 +143,11 @@ $(function(){
         json += "]}";
     }
 
+    function formatarData(data){
+        if(data.indexOf("/") > 0){
+            data = data.split("/");
+            var us_data = data.reverse().join("-");
+            return us_data;
+        }
+    }
 });

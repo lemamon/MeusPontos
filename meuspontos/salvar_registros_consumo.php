@@ -12,39 +12,10 @@ function salvarRegistroConsumo($data, $refeicao, $alimentos){
         $sql .= $_SESSION["id_logado"].",".$alimento["id"].",'".$refeicao."',".$alimento["qtdeAlimento"].",'".$data."'";
         $sql .= ")";
 
-
         echo mysql_query($sql) or die("Erro ao inserir. ".mysql_error());
-
     }
-
-
-     /*if($salvou == count($alimentos)){
-        $jsonReponse = array('salvou' => 'true',
-                             'msgServer' => nomeRefeicao($refeicao)." registrada com sucesso!");
-        echo json_encode($jsonReponse);
-     }else if(is_nan($salvou)){
-       $jsonReponse = array('salvou' => 'false',
-                            'msgServer' => 'Ocorreu o seguinte erro na tentativa de salvar: ');
-     }*/
-      // echo json_encode($jsonReponse);
-
 }
-
-
-
-$jsonData = $_POST["jsonData"];
-
-if($jsonData == ""){
-    echo "Dados estão vazios.";
-}else{
-    $jsonData = json_decode($jsonData, true);
-    $data = $jsonData["data"];
-    $refeicao = $jsonData["refeicao"];
-    $alimentos = $jsonData["alimentos"];
-
-    salvarRegistroConsumo($data, $refeicao, $alimentos);
-}
-
+//----------------
 function nomeRefeicao($str){
     if($str == "cafe_da_manha"){
         return "Café da Manhã";
@@ -59,6 +30,25 @@ function nomeRefeicao($str){
     }else if($str == "lanche_da_manha"){
         return "Lanche da Noite";
     }
+}
+//----------------
+function pesquisarAlimento($id){
+    $sql = "SELECT * FROM Alimento WHERE alim_id = ".$id;
+    $resultado = mysql_query($sql);
+    $dados = mysql_fetch_array($resultado, MYSQL_ASSOC);
+    echo json_encode($dados);
+}
+
+$jsonData = $_POST["jsonData"];
+if($jsonData == ""){
+    echo "Dados estão vazios.";
+}else{
+    $jsonData = json_decode($jsonData, true);
+    $data = $jsonData["data"];
+    $refeicao = $jsonData["refeicao"];
+    $alimentos = $jsonData["alimentos"];
+
+    salvarRegistroConsumo($data, $refeicao, $alimentos);
 }
 
 ?>
