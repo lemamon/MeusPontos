@@ -1,14 +1,14 @@
 <?php
-    // Iniciando a sessão
+    /*(/ Iniciando a sessão
     session_start();
 
     // Verificando se o usuário já está logado.
-    if(($_SESSION["nome_logado"] != "") && ($_SESSION["email_logado"] != "")){
+    if(/*(($_SESSION["nome_logado"] != "") && ($_SESSION["email_logado"] != "")) || ($_COOKIE['lembrar'] != null )){
 
         // Se ele já está logado, não vai ser necessário mais fazer login...
         // Sendo assim, é melhor redirecioná-lo para a tela inicial.
         header("location: telainicial.php");
-    }
+    }*/
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -62,7 +62,7 @@
                         <div class="col-sm-offset-4 col-sm-4">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox"> Lembrar-me
+                                    <input type="checkbox" name="lembrar"> Lembrar-me
                                 </label>
                             </div>
                         </div>
