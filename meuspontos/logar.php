@@ -46,13 +46,22 @@
 		$_SESSION["id_logado"] = $dados_do_banco["us_id"];
 		$_SESSION["nome_logado"] = $dados_do_banco["us_nome"];
 		$_SESSION["email_logado"] = $dados_do_banco["us_email"];
-
+        
+        //Verifica se a opção lembrar-me foi habilitada.
+        if(isset($_POST["lembrar"])){
+            //Tempo de vida do cookie.
+            $tempo_expiracao = (time()+(60*60*24*30)); 
+            //Set o cookie com a tag lembrar.
+            setcookie('lembrar', $senha, $tempo_expiracao); 
+        }
+        
 		// Aqui estamos redirecionando para tela inicial do usuário logado.
 		header("Location: telainicial.php");
+        
 	}else{
-
 		// O usuário não foi encontrado.
 		// Redirecionamos para a página de não econtrado.
 		header("Location: loginerro.php");
 	}
+        
 ?>
