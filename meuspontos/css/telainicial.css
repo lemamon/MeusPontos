@@ -1,0 +1,29 @@
+.controleMeta{
+    width: 60%;
+}
+
+.controleMeta h2{
+    width: 37%;
+    float: left;
+    border:0px solid red;
+}
+
+.btAlterarMeta{
+    float: left !important;
+    width: 20% !important;
+    margin-top: 22px;
+    margin-left: 10px;
+}
+
+.clear{
+    clear: both;
+}
+
+.btleft, .ptInput{
+    float: left;
+}
+
+.ptInput{
+    width: 90px;
+    float: left;
+}

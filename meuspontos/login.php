@@ -1,14 +1,14 @@
 <?php
-    /*(/ Iniciando a sessão
+    // Iniciando a sessão
     session_start();
 
     // Verificando se o usuário já está logado.
-    if(/*(($_SESSION["nome_logado"] != "") && ($_SESSION["email_logado"] != "")) || ($_COOKIE['lembrar'] != null )){
+    if((($_SESSION["nome_logado"] != "") && ($_SESSION["email_logado"] != "")) || ($_COOKIE['lembrar'] != null )){
 
         // Se ele já está logado, não vai ser necessário mais fazer login...
         // Sendo assim, é melhor redirecioná-lo para a tela inicial.
         header("location: telainicial.php");
-    }*/
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
