@@ -1,21 +1,68 @@
 <?php
     include_once("header.php");
+    include_once("conexao.php");
+
+    $sql = "SELECT * FROM Usuario WHERE us_id = ".$_SESSION["id_logado"];
+    $resultado = mysql_query($sql);
+    $dados_do_banco = mysql_fetch_array($resultado);
+
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        //echo "<script>alert('meta: '+".$_POST['nova_meta'].");</script>";
+
+        $sql = "UPDATE Usuario SET us_limPontos = '".$_POST['nova_meta']."' WHERE us_id = ".$_SESSION["id_logado"];
+        $resultado = mysql_query($sql);
+
+        if($resultado){
+            echo "<script>alert('Nova meta definida!');</script>";
+        }
+        header("location: telainicial.php");
+
+        $sql = "SELECT * FROM Usuario WHERE us_id = ".$_SESSION["id_logado"];
+        $resultado = mysql_query($sql);
+        $dados_do_banco = mysql_fetch_array($resultado);
+    }
+
+
+
 ?>
-  <h2 class="text-center">Sua Meta: <small>50 pontos.</small></h2>
+  <link rel="stylesheet" href="css/telainicial.css" media="all" type="text/javascript">
+  <script type="text/javascript" src="js/telainicial.js"></script>
+  <style media="screen">
+    .ptInput{
+        width: 90px;
+        float: left;
+    }
+    .btsAlterar{
+        margin-top: 15px;
+    }
+  </style>
 
   <!--Alterar Meta-->
-  <div class="col-lg-2 col-md-offset-5 ">
-      <div class="input-group input-group-sm">
-          <input type="text" class="form-control" placeholder="60">
+  <div class="controleMeta" >
+      <h2>Sua Meta: <small><?php echo $dados_do_banco['us_limPontos']?> pontos</small></h2>
+      <div class="input-group input-group-sm btAlterarMeta">
           <span class="input-group-btn">
-              <button class="btn btn-default " type="button">
+              <button class="btn btn-default btControleBts" type="button">
                   <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                   Alterar Meta
               </button>
           </span>
       </div>
-  </div>
+      <div class="clear" ></div>
 
+      <form action="telainicial.php" method="post">
+          <div class="btsAlterar">
+              <div class="btn-group" role="group" aria-label="...">
+                  <button type="button" class="btn btn-default btleft"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                  <input type="text" class="form-control ptInput" name="nova_meta" value="<?php echo $dados_do_banco['us_limPontos']?>" readonly="readonly">
+                  <button type="button" class="btn btn-default btright"><span class="glyphicon glyphicon-minus" aria-hidden="true"></button>
+              </div>
+              <br/><br/>
+              <input type="submit" class="btConfirma" value="Confirmar"/>
+              <input type="reset" class="btCancelar" value="Cancelar"/>
+          </div>
+      </form>
+  </div>
   <br>
   <br>
 
