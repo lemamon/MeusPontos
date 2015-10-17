@@ -61,7 +61,13 @@
 	}else{
 		// O usuário não foi encontrado.
 		// Redirecionamos para a página de não econtrado.
-		header("Location: loginerro.php");
-	}
-
+		?>
+        <html>
+        <meta http-equiv="refresh" content="0; url=login.php" />
+            <script language="javascript" type="text/javascript">
+                 alert("Dados não encontrados... :'(");
+            </script>
+        </html>    
+        <?php
+    }    
 ?>
