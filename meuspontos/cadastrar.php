@@ -44,5 +44,10 @@
 
 	// Caso não dê erro, o usuário será redirecionado para
 	// a tela de cadastrado com sucesso.
-	header("Location: cadastrado_sucesso.html");
 ?>
+<html>
+    <meta http-equiv="refresh" content="0; url=login.php" />
+    <script language="javascript" type="text/javascript">
+         alert("Cadastrado com sucesso!!! :D");
+    </script>
+</html>    
