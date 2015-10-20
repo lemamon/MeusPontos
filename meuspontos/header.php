@@ -20,10 +20,16 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>+Meus Pontos</title>
 
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/registrarconsumo.js"></script>
         <!-- biblioteca Chart.js para criar graficos -->
         <script src="js/Chart.min.js"></script>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,12 +57,6 @@
     </head>
 
     <body>
-        <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/registrarconsumo.js"></script>
-
         <br>
         <div class="row">
             <!-- header (cabeçalho) -->
