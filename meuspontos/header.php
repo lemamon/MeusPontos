@@ -89,7 +89,7 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='RegistrarConsumo.php'">Registrar Consumo</button>
                             <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='acompanhar_consumo_diario.php'">Consumo Diário</button>
-                            <button type="button" class="btn btn-default navbar-btn btn-primary">Histórico de Consumo</button>
+                            <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='visualizar_historico_consumo.php'">Histórico de Consumo</button>
                             <button type="button" class="btn btn-default navbar-btn btn-primary">Tabela de Alimentos</button>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
