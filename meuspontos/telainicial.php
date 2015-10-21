@@ -96,7 +96,7 @@
             }
         </script>
     </div>
-    <div class="alert alert-danger text-center" role="alert"><h3>Pontos Consumido: 20</h3></div>
+    <div class="alert alert-danger text-center" role="alert"><h3>Pontos Consumidos: 20</h3></div>
     <div class="alert alert-info text-center" role="alert"><h3>Pontos Restantes: 10</h3></div>
 <?php
     include_once("footer.php")

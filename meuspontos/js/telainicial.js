@@ -12,14 +12,14 @@ $(function(){
     $(".btleft").click(function(){
         var valormeta = $(".ptInput").val();
         valormeta = parseInt(valormeta);
-        valormeta++;
+        valormeta += 25;
         $(".ptInput").val(valormeta);
     });
 
     $(".btright").click(function(){
         var valormeta = $(".ptInput").val();
         valormeta = parseInt(valormeta);
-        valormeta--;
+        valormeta -= 25;
         if(valormeta < 0){
             valormeta = 0;
         }

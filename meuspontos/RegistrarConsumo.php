@@ -1,7 +1,7 @@
 <?php
     include_once("conexao.php");
     include_once("header.php");
-    $sql = "SELECT * FROM Alimento";
+    $sql = "SELECT * FROM Alimento ORDER BY alim_descricao ASC";
     $resultado = mysql_query($sql);
 ?>
 
