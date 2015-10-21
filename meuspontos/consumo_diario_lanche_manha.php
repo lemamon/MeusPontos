@@ -10,7 +10,17 @@
     $total_registros = mysql_num_rows($result);
     if($total_registros > 0){
 ?>
-        <h3>Lanche da manhã</h3>
+        <style media="screen">
+            #lanche_da_manha_titulo{
+                border-bottom: 1px dotted #000;
+                padding-left: 74px;
+                background: url("images/snack.png") no-repeat left bottom;
+                background-size: 50px 46px;
+                padding-bottom: 5px;
+                padding-top: 37px;
+            }
+        </style>
+        <h3 id="lanche_da_manha_titulo">Lanche da Manha</h3>
 
         <table>
             <tr>
@@ -19,11 +29,11 @@
                 <th>Pontos adicionados</th>
             </tr>
 
-            <?php while($dado = mysql_fetch_array($result)){?>
+            <?php while($dados = mysql_fetch_array($result)){?>
                 <tr>
-                    <td><?php echo $dado['alimento']?></td>
-                    <td><?php echo $dado['quantidade']?> (<?php echo $dado['medida']?>)</td>
-                    <td><?php echo $dado['pontos']?></td>
+                    <td><?php echo utf8_encode($dados['alimento']) ?></td>
+                    <td><?php echo $dados['quantidade']?> (<?php echo utf8_encode($dados['medida'])?>)</td>
+                    <td><?php echo $dados['pontos']?></td>
                     <td>
                         <a class="glyphicon glyphicon-pencil btsControle" id="editar" href=""></a>
                         <a class="glyphicon glyphicon-remove btsControle" id="excluir" href="javascript:func()" onclick="funExcluir()"></a>

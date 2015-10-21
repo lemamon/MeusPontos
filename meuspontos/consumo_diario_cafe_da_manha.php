@@ -11,8 +11,17 @@
 
     if($total_registros > 0){
 ?>
-        <h3>Café da manhã</h3>
-
+        <style media="screen">
+            #cafe_titulo{
+                border-bottom: 1px dotted #000;
+                padding-left: 74px;
+                background: url("images/breakfast.png") no-repeat left bottom;
+                background-size: 55px 46px;
+                padding-bottom: 5px;
+                padding-top: 37px;
+            }
+        </style>
+        <h3 id="cafe_titulo">Café da manhã</h3>
         <table>
             <tr>
                 <th>Alimento</th>
@@ -22,8 +31,8 @@
 
             <?php while($dados = mysql_fetch_array($result)){?>
                 <tr>
-                    <td><?php echo $dados['alimento']?></td>
-                    <td><?php echo $dados['quantidade']?> (<?php echo $dados['medida']?>)</td>
+                    <td><?php echo utf8_encode($dados['alimento']) ?></td>
+                    <td><?php echo $dados['quantidade']?> (<?php echo utf8_encode($dados['medida'])?>)</td>
                     <td><?php echo $dados['pontos']?></td>
                     <td>
                         <a class="glyphicon glyphicon-pencil btsControle" id="editar" href=""></a>

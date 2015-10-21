@@ -8,6 +8,8 @@ $(document).ready(function(){
     var qtdePontos;
     var elementoAlimento;
     var json;
+    var medida;
+    var totalAcumulado = 0;
 
     $("#msg_erro_nenhum_alimento").hide();
     $("#msg_erro_ao_salvar").hide();
@@ -25,11 +27,14 @@ $(document).ready(function(){
             nomeAlimento = $(this).html();
             idAlimento = $(this).children("#id_alimento").val();
             qtdePontos = $(this).children("#qtde_pontos").val();
+            medida = $(this).children("#alim_medida").val();
 
             var indiceFimAlimento = nomeAlimento.indexOf(" -");
             nomeAlimento = nomeAlimento.substring(0, indiceFimAlimento);
             var titulo = "Informe a quantidade ingerida de <b>" + nomeAlimento + "</b>";
             $("#titulo_painel_quantidade").html(titulo);
+            $("#medida_do_alimento").text(medida);
+
             $("#quantidade").focus();
             //alert($(this).children("#alim_medida").val());
             $(".qtde-wrapper div#medida").text($(this).children("#alim_medida").val());
@@ -41,6 +46,8 @@ $(document).ready(function(){
         qtdeAlimento = parseInt(qtdeAlimento);
         var total = qtdeAlimento * qtdePontos;
 
+        totalAcumulado += total;
+
         arrAlimentos.push(idAlimento);
         arrAlimentos.push(nomeAlimento);
         arrAlimentos.push(qtdePontos);
@@ -49,9 +56,11 @@ $(document).ready(function(){
         $("#painelAlimentoSelecionado").show();
 
         var corpo_tabela = $("#painelAlimentoSelecionado table tbody").html();
-        corpo_tabela += "<tr><td>"+nomeAlimento+"</td><td>"+qtdePontos+"</td><td>"+qtdeAlimento+"</td><td>"+total+"</td></tr>";
+        corpo_tabela += "<tr><td>"+nomeAlimento+"</td><td>"+qtdePontos+"</td><td>"+qtdeAlimento+"</td><td>"+medida+"</td><td>"+total+"</td></tr>";
 
         $("#painelAlimentoSelecionado table tbody").html(corpo_tabela);
+        $("#total_pontos").text(totalAcumulado);
+
         $("#bt_limpar_lista").show();
         $("#painelAlimentoQuantidade").hide();
         $(elementoAlimento).parent().addClass("disabled");

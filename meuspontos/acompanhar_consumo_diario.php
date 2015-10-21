@@ -3,6 +3,14 @@
     include_once("header.php");
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $data = $_POST['data'];
+        $explode = "-";
+        $pos = strripos($data, "/");
+        if($pos != false){
+            $explode = "/";
+        }
+        $dataArr = explode($explode, $data);
+        $dataArr = array_reverse($dataArr);
+        $data = $dataArr[0]."-".$dataArr[1]."-".$dataArr[2];
    }else{
         $data = date('Y-m-d');
    }
@@ -17,7 +25,7 @@
           <form action="acompanhar_consumo_diario.php" method="post">
               <h3>Acompanhar Consumo</h3>
               <div class="input-group input-group-sm" id="alterarData">
-                  <input type="text" class="form-control" id="data" name="data" value="<?php echo date("Y-m-d")?>">
+                  <input type="text" class="form-control" id="data" name="data" value="<?php echo date("d-m-Y", strtotime($data))?>">
                   <span class="input-group-btn">
                       <button class="btn btn-default " type="submit" id="bt_alterar_data">
                           <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
@@ -36,8 +44,6 @@
            include_once("consumo_diario_janta.php");
            include_once("consumo_diario_lanche_da_noite.php");
         ?>
-
-
     </div>
     <div class="panel-footer">
 

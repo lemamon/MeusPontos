@@ -61,7 +61,7 @@
                                   <span class="pontuacao_alimento"><?php echo $dado["alim_qtdePontos"] ?>pts</span>
                                   <input type="hidden" id="id_alimento" value="<?php echo $dado["alim_id"] ?>">
                                   <input type="hidden" id="qtde_pontos" value="<?php echo $dado["alim_qtdePontos"] ?>">
-                                  <input type="hidden" id="alim_medida" value="<?php echo $dado["alim_medida"] ?>">
+                                  <input type="hidden" id="alim_medida" value="<?php echo utf8_encode($dado["alim_medida"]) ?>">
                               </a>
                           </li>
                           <?php
@@ -74,6 +74,7 @@
                       <div class="panel-body">
                           <div class="qtde-wrapper">
                               <input type="number" class="form-control" id="quantidade" placeholder="Digite a quantidade">
+                              <span id="medida_do_alimento"></span>
                               <div class="clear"></div>
                           </div>
 
@@ -90,23 +91,22 @@
                           <table>
                                 <thead>
                                     <tr>
-                                        <th>
-                                            Alimento
-                                        </th>
-                                        <th>
-                                            Pontos
-                                        </th>
-                                        <th>
-                                            Qtde. Consumida
-                                        </th>
-                                        <th>
-                                            Total
-                                        </th>
+                                        <th>Alimento</th>
+                                        <th>Pontos</th>
+                                        <th>Qtde. Consumida</th>
+                                        <th>Medida</th>
+                                        <th>Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="4"></th>
+                                        <th id="total_pontos">0</th>
+                                    </tr>
+                                </tfoot>
                           </table>
                       </div>
                   </div>
