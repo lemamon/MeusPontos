@@ -63,11 +63,12 @@
 		// Redirecionamos para a página de não econtrado.
 		?>
         <html>
+				<meta charset="utf-8">
         <meta http-equiv="refresh" content="0; url=login.php" />
             <script language="javascript" type="text/javascript">
                  alert("Dados não encontrados... :'(");
             </script>
-        </html>    
+        </html>
         <?php
-    }    
+    }
 ?>

@@ -17,6 +17,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="images/icone.png" />
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>+Meus Pontos</title>
 
@@ -63,7 +64,7 @@
             <div class="col-xs-10 col-xs-offset-1 bg-info">
                 <div class="page-header dropdown">
                     <a class="navbar-brand" href="index.html">
-                        <img alt="Brand" src="images\icone.png">
+                        <img alt="Brand" src="images/icone.png">
                     </a>
                     <h1>+Meus Pontos<br><small>Emagrecendo com Saúde</small></h1>
                     <p class="text-right">Seja Bem Vindo! <a href="logout.php"><small>Sair</small></a></p>
@@ -90,7 +91,8 @@
                             <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='RegistrarConsumo.php'">Registrar Consumo</button>
                             <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='acompanhar_consumo_diario.php'">Consumo Diário</button>
                             <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='visualizar_historico_consumo.php'">Histórico de Consumo</button>
-                            <button type="button" class="btn btn-default navbar-btn btn-primary">Tabela de Alimentos</button>
+                            <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='TabelaDeAlimentos.php'">Tabela de Alimentos</button>
+                            <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href=''">Controlar Peso</button>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
                 </nav>
