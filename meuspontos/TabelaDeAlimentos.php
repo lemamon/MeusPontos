@@ -1,4 +1,26 @@
-<?php include("header.php"); ?>
+<?php
+
+  include("header.php");
+  include("conexao.php");
+
+  $query = "SELECT alim_id, alim_descricao, alim_tipo, alim_medida, alim_qtdePontos FROM Alimento";
+  $result = mysql_query($query);
+
+  if($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $descricao = $_POST["alimento"];
+      $tipo = $_POST["tipo_alimento"];
+      $medida = $_POST["medida"];
+      $qtdePontos = $_POST["qtde_pontos"];
+
+      $query = "INSERT INTO Alimento(alim_descricao, alim_tipo, alim_medida, alim_qtdePontos) VALUES
+      ('".$descricao."', '".$tipo."', '".$medida."', '".$qtdePontos."')";
+
+      mysql_query($query) or die(mysql_error());
+      $query = "SELECT alim_id, alim_descricao, alim_tipo, alim_medida, alim_qtdePontos FROM Alimento";
+      $result = mysql_query($query);
+  }
+
+?>
 <style media="screen">
     table{
       width: 100%;
@@ -33,10 +55,6 @@
         margin-left: 20px;
     }
 
-    .row-edition{
-        display: none;
-    }
-
     .delete{
         width: 30px;
         height: 30px;
@@ -44,56 +62,47 @@
 </style>
 
 <script type="text/javascript" src="js/tabela_alimentos.js"></script>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <div>
-            <h4 id="titulo">Manter Tabela de Alimentos</h4>
-            <button id="btnAdicionar" class="btn btn-default">Adicionar</button>
-            <div class="clear" id="clear_titulo"></div>
+<form action="TabelaDeAlimentos.php" method="post" id="form">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div>
+                <h4 id="titulo">Manter Tabela de Alimentos</h4>
+                <button type="button" id="btnAdicionar" class="btn btn-default">Adicionar</button>
+                <div class="clear" id="clear_titulo"></div>
+            </div>
         </div>
-    </div>
-    <div class="panel-body">
-        <table id="tblCadastro" class="table">
-            <thead>
-                <tr>
-                    <th>Alimento</th>
-                    <th>Medida</th>
-                    <th>Pontos</th>
-                    <th>Opções</th>
-                    <th></th>
-                </tr>
-            </thead>
+        <div class="panel-body">
+            <table id="tblCadastro" class="table">
+                <thead>
+                    <tr>
+                        <th>Alimento</th>
+                        <th>Tipo de Alimento</th>
+                        <th>Quantidade Pontos</th>
+                        <th>Medida</th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                <tr>
-                    <td>
-                        <span class="row-description">Café</span>
-                        <input type="text" name="alimento" class="row-edition" value="Café"/>
-                    </td>
-                    <td>
-                        <span class="row-description">2 Copos</span>
-                          <input type="text" name="alimento" class="row-edition" value="2 Copos"/>
-                    </td>
-                    <td>
-                        <span class="row-description">2.5</span>
-                        <input type="text" name="alimento" class="row-edition" value="2.5"/>
-                    </td>
-                    <td>
-                        <img class='save btcontrols' src='images/disk.png' title="Salvar"/>
-                        <img class='edit btcontrols' src='images/pencil.png' />
-                        <img class='cancelEditing btcontrols' src='images/cancel.png' title="Cancelar Edição"/>
-                        <img class='delete btcontrols' src='images/delete.png' title="Excluir Alimento"/>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                <tbody>
+                <?php while($dado = mysql_fetch_array($result)){ ?>
+                    <tr>
+                        <td>
+                            <span class="row-description"><?php echo utf8_encode($dado["alim_descricao"]);?></span>
+                        </td>
+                        <td>
+                            <span class="row-description"><?php echo utf8_encode($dado["alim_tipo"]);?></span>
+                        </td>
+                        <td>
+                            <span class="row-description"><?php echo $dado["alim_qtdePontos"];?></span>
+                        </td>
+                        <td>
+                            <span class="row-description"><?php echo utf8_encode($dado["alim_medida"]);?></span>
+                        </td>
+                    </tr>
+                  <?php } ?>
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-footer"></div>
     </div>
-    <div class="panel-footer">
-
-    </div>
-</div>
-<div class="col-sm-offset-10 col-sm-5" style="display:none;">
-    <button type="submit" class="btn btn-default">Salvar Alterações</button>
-</div>
+</form>
 <?php include("footer.php"); ?>
