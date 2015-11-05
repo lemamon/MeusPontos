@@ -92,7 +92,7 @@
                             <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='acompanhar_consumo_diario.php'">Consumo Diário</button>
                             <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='visualizar_historico_consumo.php'">Histórico de Consumo</button>
                             <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='TabelaDeAlimentos.php'">Tabela de Alimentos</button>
-                            <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href=''">Controlar Peso</button>
+                            <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='controlarpeso.php'">Controlar Peso</button>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
                 </nav>
