@@ -35,6 +35,9 @@
     .btsAlterar{
         margin-top: 15px;
     }
+   	
+
+
   </style>
 
   <!--Alterar Meta-->
@@ -57,17 +60,26 @@
                   <input type="text" class="form-control ptInput" name="nova_meta" value="<?php echo $dados_do_banco['us_limPontos']?>" readonly="readonly">
                   <button type="button" class="btn btn-default btright"><span class="glyphicon glyphicon-minus" aria-hidden="true"></button>
               </div>
-              <br/><br/>
-              <input type="submit" class="btConfirma" value="Confirmar"/>
-              <input type="reset" class="btCancelar" value="Cancelar"/>
+              <br><br>
+              <input type="submit" class="btConfirma" value="Confirmar">
+              <input type="reset" class="btCancelar" value="Cancelar">
           </div>
       </form>
   </div>
   <br>
-  <br>
 
-  <div class="box-chart">
-      <canvas id="GraficoDonut" style="width:100%;"></canvas>
+    <div class="container center-block ">
+      <div class="row">
+      <div class="text-center bg-info col-md-6 alert alert-info">
+          <h2>Dieta dos Pontos</h2>
+          <h4 style="text-align: justify;"><br><br> A dieta dos pontos foi desenvolvida para quem quer emagrecer com sa&uacute;de sem deixar de comer o que gosta. <br><br>
+	No lugar de calorias, voc&ecirc; soma pontos , assim fica livre para comer o que quiser, dentro do seu limite di&aacute;rio de pontos, e emagrece sem passar fome!<br><br>
+Todo alimento &eacute; permitido, mas deve-se calcular o limite di&aacute;rio de pontos a serem consumidos, baseado nos fatores: sexo, idade, altura e peso.<br><br>
+Ap&oacute;s o c&aacute;lculo do limite di&aacute;rio &eacute; s&oacute; consultar a tabela para saber quantos pontos tem cada alimento e come&ccedil;ar a registrar o consumo para controlar 
+a quantidade de pontos ingeridos no dia. <br>
+<br>Emagre&ccedil;a facilmente registrando e controlando o consumo de pontos com o Sistema Meus Pontos!<br> </h4></div>
+        <div class="text-center bg-info col-md-5">      
+	<canvas class="alert-info" id="GraficoDonut" style="width:100%;"></canvas>
 	    <script type="text/javascript">
 
         	var options = {
@@ -95,9 +107,10 @@
             var PizzaChart = new Chart(ctx).Doughnut(data, options);
             }
         </script>
-    </div>
+	<br><br>	
     <div class="alert alert-danger text-center" role="alert"><h3>Pontos Consumidos: 20</h3></div>
     <div class="alert alert-info text-center" role="alert"><h3>Pontos Restantes: 10</h3></div>
+    </div>
 <?php
     include_once("footer.php")
 ?>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     // Iniciando a sessão
     session_start();
 
@@ -93,7 +93,7 @@
                             <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='visualizar_historico_consumo.php'">Histórico de Consumo</button>
                             <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='TabelaDeAlimentos.php'">Tabela de Alimentos</button>
                             <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='controlarpeso.php'">Controlar Peso</button>
-                        </div><!-- /.navbar-collapse -->
+        <button type="button" class="btn btn-default navbar-btn btn-primary" onclick="location.href='ajuda.php'">Ajuda</button>                </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
                 </nav>
             </div>
