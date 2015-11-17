@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
     <head>
         <meta charset="utf-8">
@@ -84,8 +84,7 @@
                     <br>
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-4">
-		 	    <button type="submit" class="btn btn-default" onclick="location.href='login.php'">Cancelar</button>
-                            <button type="submit" class="btn btn-default">Cadastrar</button>			    
+                            <button type="submit" class="btn btn-default">Cadastrar</button>
                         </div>
                     </div>
                     <br>
